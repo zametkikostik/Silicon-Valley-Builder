@@ -1,0 +1,35 @@
+{
+  "nav": {
+    "home": "Главная",
+    "dashboard": "Кабинет",
+    "admin": "Админка",
+    "signin": "Войти",
+    "signout": "Выйти",
+    "pricing": "Тарифы"
+  },
+  "landing": {
+    "title": "Silicon Valley Builder",
+    "subtitle": "Создавай full-stack приложения с AI. Self-hosted. Как Lovable и Bolt — но твоё.",
+    "cta": "Начать",
+    "features": {
+      "ai": "Мульти-модельный AI Builder",
+      "preview": "Live-preview в WebContainers",
+      "git": "Синхронизация с GitHub / GitLab",
+      "seo": "SEO и AI Search инструменты",
+      "admin": "Админка для нейросетей",
+      "stripe": "Платежи через Stripe"
+    }
+  },
+  "dashboard": {
+    "title": "Ваши проекты",
+    "new": "Новый проект",
+    "empty": "Проектов пока нет. Создайте первый!"
+  },
+  "builder": {
+    "prompt": "Опишите приложение, которое хотите создать...",
+    "generate": "Сгенерировать",
+    "preview": "Превью",
+    "seo": "SEO & AI Search",
+    "push": "Пуш в Git"
+  }
+}

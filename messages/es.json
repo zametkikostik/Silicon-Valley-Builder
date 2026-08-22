@@ -1,0 +1,35 @@
+{
+  "nav": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "admin": "Admin",
+    "signin": "Sign in",
+    "signout": "Sign out",
+    "pricing": "Pricing"
+  },
+  "landing": {
+    "title": "Silicon Valley Builder",
+    "subtitle": "Build full-stack apps with AI. Self-hosted. Like Lovable & Bolt — but yours.",
+    "cta": "Start Building",
+    "features": {
+      "ai": "Multi-model AI Builder",
+      "preview": "Live WebContainers Preview",
+      "git": "GitHub / GitLab Sync",
+      "seo": "SEO & AI Search Tools",
+      "admin": "Admin Panel for LLMs",
+      "stripe": "Stripe Payments"
+    }
+  },
+  "dashboard": {
+    "title": "Your Projects",
+    "new": "New Project",
+    "empty": "No projects yet. Create your first one!"
+  },
+  "builder": {
+    "prompt": "Describe the app you want to build...",
+    "generate": "Generate",
+    "preview": "Preview",
+    "seo": "SEO & AI Search",
+    "push": "Push to Git"
+  }
+}
