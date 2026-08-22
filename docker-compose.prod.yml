@@ -1,0 +1,60 @@
+services:
+  db:
+    image: postgres:16-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: svb
+      POSTGRES_PASSWORD: svb_secret
+      POSTGRES_DB: svb
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U svb"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    restart: always
+    volumes:
+      - redis_data:/data
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql://svb:svb_secret@db:5432/svb?schema=public
+      REDIS_URL: redis://redis:6379
+      NEXTAUTH_URL: https://${DOMAIN}
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    expose:
+      - "3000"
+
+  caddy:
+    image: caddy:2-alpine
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    environment:
+      DOMAIN: ${DOMAIN}
+    depends_on:
+      - app
+
+volumes:
+  postgres_data:
+  redis_data:
+  caddy_data:
+  caddy_config:
